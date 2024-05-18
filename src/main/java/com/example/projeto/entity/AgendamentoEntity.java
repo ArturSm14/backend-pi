@@ -47,8 +47,8 @@ public class AgendamentoEntity {
         REALIZADO
     }
 	
-	@Temporal(TemporalType.TIMESTAMP)
-    private Date dataHoraAgendamento;
+	
+    private String dataHoraAgendamento;
     
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataCadastro;
@@ -111,11 +111,11 @@ public class AgendamentoEntity {
 		this.status = status;
 	}
 
-	public Date getDataHoraAgendamento() {
+	public String getDataHoraAgendamento() {
 		return dataHoraAgendamento;
 	}
 
-	public void setDataHoraAgendamento(Date dataHoraAgendamento) {
+	public void setDataHoraAgendamento(String dataHoraAgendamento) {
 		this.dataHoraAgendamento = dataHoraAgendamento;
 	}
 

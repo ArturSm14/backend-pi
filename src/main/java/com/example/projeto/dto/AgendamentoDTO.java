@@ -1,5 +1,7 @@
 package com.example.projeto.dto;
 
+
+
 import org.springframework.beans.BeanUtils;
 import com.example.projeto.entity.AgendamentoEntity;
 
@@ -12,6 +14,7 @@ public class AgendamentoDTO {
 	private String medico;
 	private String clinica;
 	private String email;
+	private String dataConsulta;
 	private String status;
 	
 	public AgendamentoDTO(AgendamentoEntity agendamento) {
@@ -22,6 +25,14 @@ public class AgendamentoDTO {
 		
 	}
 
+	public String getDataConsulta() {
+		return dataConsulta;
+	}
+	
+	public void setDataConsulta(String dataConsulta) {
+		this.dataConsulta = dataConsulta;
+	}
+	
 	public Long getId() {
 		return id;
 	}
