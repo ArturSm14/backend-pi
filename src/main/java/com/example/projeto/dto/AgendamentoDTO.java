@@ -2,8 +2,11 @@ package com.example.projeto.dto;
 
 
 
+import java.util.Date;
+
 import org.springframework.beans.BeanUtils;
 import com.example.projeto.entity.AgendamentoEntity;
+import com.example.projeto.entity.AgendamentoEntity.Status;
 
 
 
@@ -15,7 +18,7 @@ public class AgendamentoDTO {
 	private String clinica;
 	private String email;
 	private String dataConsulta;
-	private String status;
+	private Status status;
 	
 	public AgendamentoDTO(AgendamentoEntity agendamento) {
 		BeanUtils.copyProperties(agendamento, this);
@@ -73,13 +76,14 @@ public class AgendamentoDTO {
 		this.email = email;
 	}
 
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
+
 	
 	
 

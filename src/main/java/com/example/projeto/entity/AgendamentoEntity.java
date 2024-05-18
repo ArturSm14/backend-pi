@@ -48,13 +48,16 @@ public class AgendamentoEntity {
     }
 	
 	
-    private String dataHoraAgendamento;
+    private String dataConsulta;
     
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataCadastro;
 	
 	public AgendamentoEntity(AgendamentoDTO agendamento) {
 		BeanUtils.copyProperties(agendamento, this);
+		if (this.status == null) {
+	        this.status = Status.AGENDADO; 
+	    }
 	}
 	
 	public AgendamentoEntity() {
@@ -112,11 +115,11 @@ public class AgendamentoEntity {
 	}
 
 	public String getDataHoraAgendamento() {
-		return dataHoraAgendamento;
+		return dataConsulta;
 	}
 
-	public void setDataHoraAgendamento(String dataHoraAgendamento) {
-		this.dataHoraAgendamento = dataHoraAgendamento;
+	public void setDataHoraAgendamento(String dataConsulta) {
+		this.dataConsulta = dataConsulta;
 	}
 
 	public Date getDataCadastro() {
@@ -129,7 +132,9 @@ public class AgendamentoEntity {
 
 	@PrePersist
 	protected void onCreate() {
-		dataCadastro = new Date();
+		if(this.dataCadastro == null) {
+			this.dataCadastro = new Date();
+		}
 	}
 	
 }

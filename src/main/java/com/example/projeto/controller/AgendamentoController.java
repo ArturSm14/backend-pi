@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.projeto.dto.AgendamentoDTO;
+import com.example.projeto.entity.AgendamentoEntity.Status;
 import com.example.projeto.service.AgendamentoService;
 
 
@@ -34,7 +35,9 @@ public class AgendamentoController {
 	@PostMapping
 	public void inserir(@RequestBody AgendamentoDTO agendamento) {
 		agendamentoService.inserir(agendamento);
+		Status status = agendamento.getStatus();
 	}
+	
 	
 	@PutMapping
 	public AgendamentoDTO alterar(@RequestBody AgendamentoDTO agendamento) {
